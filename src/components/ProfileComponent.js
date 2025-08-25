@@ -147,7 +147,6 @@ const ProfileComponent = ({ user }) => {
 
 export default ProfileComponent;
 
-{
   /* <div className="grid gap-10 md:grid-cols-2">
   <div className="flex flex-col m-4">
     <h2 className="text-lg font-medium mb-5">
@@ -194,4 +193,4 @@ export default ProfileComponent;
     </h2>
   </div>
 </div>; */
-}
+
