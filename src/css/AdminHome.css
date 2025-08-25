@@ -1,0 +1,35 @@
+/* AdminHome.css */
+
+.dashboard-heading {
+  padding: 20px;
+  font-weight: bold;
+  background-color: grey;
+}
+
+/* Container for dashboard and sidebar */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Main dashboard content */
+.dashboard-main {
+  flex-grow: 1;
+  padding: 1rem;
+  margin-top: 20px;
+  margin-left: 250px; /* Space for the sidebar */
+  transition: margin-left 0.3s ease, opacity 0.3s ease;
+}
+
+/* Adjust layout for smaller screens */
+@media (max-width: 768px) {
+  .dashboard-main {
+    margin-left: 0; /* No margin when sidebar is hidden */
+    opacity: 1; /* Ensure dashboard is fully visible */
+  }
+
+  .dashboard-main.expanded {
+    margin-left: 0; /* No margin when sidebar is expanded */
+    opacity: 0.3; /* Make dashboard content less visible when sidebar is open */
+  }
+}

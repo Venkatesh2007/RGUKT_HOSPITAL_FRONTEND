@@ -1,0 +1,61 @@
+/* Ensure the sidebar is positioned below the header */
+.sidebar {
+  width: 250px;
+  position: fixed;
+  top: 64px; /* Adjust this value to match the height of your header */
+  left: 0;
+  height: calc(
+    100% - 64px
+  ); /* Adjust this value to match the height of your header */
+  background-color: #2d2d2d;
+  color: white;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar ul li {
+  margin: 5px 0; /* Add margin between list items */
+  border-bottom: 1px solid #444; /* Border line for each item */
+  padding: 10px 15px; /* Add some padding for better spacing */
+}
+
+/* Adjust the hover and selected state to ensure border visibility */
+.sidebar ul li:hover {
+  background-color: #555; /* Background color on hover */
+}
+
+.sidebar ul li.bg-gray-700 {
+  background-color: #333; /* Selected background color */
+  border-bottom: 1px solid #666; /* Slightly different border color for selected item */
+}
+
+/* Default sidebar visibility on larger screens */
+@media (min-width: 769px) {
+  .sidebar {
+    transform: translateX(0); /* Always visible */
+  }
+}
+
+/* Hide sidebar off-screen on smaller screens */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-250px); /* Hide sidebar off-screen */
+  }
+
+  .sidebar.show {
+    transform: translateX(0); /* Show sidebar */
+  }
+
+  /* Button to toggle sidebar (visible on small screens) */
+  .sidebar-toggle {
+    display: block;
+    position: fixed;
+    top: 14px;
+    right: 55px;
+    z-index: 1100;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+  }
+}
