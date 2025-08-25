@@ -24,7 +24,7 @@ const SignUpForm = ({ userIds, fetchUserIds }) => {
     if (role) {
       setUserIdBasedOnRole(role);
     }
-  }, [userIds, role]);
+  }, [userIds, role, setUserIdBasedOnRole]);
 
   const setUserIdBasedOnRole = (role) => {
     const { admin, doctor, nurse, pharmacist } = userIds;
