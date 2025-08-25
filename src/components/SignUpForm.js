@@ -20,12 +20,7 @@ const SignUpForm = ({ userIds, fetchUserIds }) => {
   const [role, setRole] = useState("");
   const [userId, setUserId] = useState("");
 
-  useEffect(() => {
-    if (role) {
-      setUserIdBasedOnRole(role);
-    }
-  }, [userIds, role, setUserIdBasedOnRole]);
-
+  
   const setUserIdBasedOnRole = (role) => {
     const { admin, doctor, nurse, pharmacist } = userIds;
     if (role === "admin") setUserId("A" + admin);
@@ -33,6 +28,13 @@ const SignUpForm = ({ userIds, fetchUserIds }) => {
     else if (role === "nurse") setUserId("N" + nurse);
     else if (role === "pharmacist") setUserId("P" + pharmacist);
   };
+
+  useEffect(() => {
+    if (role) {
+      setUserIdBasedOnRole(role);
+    }
+  }, [userIds, role, setUserIdBasedOnRole]);
+
 
   const submitBtn = async (event) => {
     event.preventDefault();
